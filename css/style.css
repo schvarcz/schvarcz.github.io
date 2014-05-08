@@ -1,0 +1,482 @@
+@import url("normalize.css");
+
+html,body
+{
+    height: 100%;
+}
+
+body
+{
+    background:url("../imgs/background1.png");
+    font-family:sans;
+}
+
+.header
+{
+    background: #000;
+    overflow:hidden;
+    border-bottom: solid 1px #999;
+    height:55px;
+    position:absolute;
+    left:0px;
+    right:0px;
+}
+
+.header .logo
+{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+.header .menu
+{
+    text-align:center;
+    margin:auto;
+    width:416px;
+}
+
+.header .menu a
+{
+    text-decoration:none;
+    text-transform: uppercase;
+    display:block;
+    float:left;
+    padding:0px 15px;
+    line-height:55px;
+    vertical-align:middle;
+    font-size:15pt;
+    color: #fff;
+    border-left:1px solid #ccc;
+}
+
+.header .menu a:last-child
+{
+    border-right:1px solid #ccc;
+}
+
+
+.header .menu a.active
+{
+    background:#0d7fff;
+}
+
+.fake-header
+{
+    height: 55px;
+    margin-bottom:20px;
+}
+
+
+.fake-footer
+{
+    height: 45px;
+    clear:both;
+}
+
+.footer
+{
+    margin:20px 50px;
+    height: 45px;
+}
+
+.footer a
+{
+    height:40px;
+    width:36px;
+    float:right;
+    text-decoration:none;
+    background-repeat: no-repeat;
+}
+
+.footer a:hover
+{
+    background-position: 0px -40px;
+}
+
+.article 
+{
+    width:1000px;
+    margin:0px auto;
+    font-size:22px;
+    color:#333;
+    overflow: hidden;
+    padding:0px 10px;
+
+    min-height:100%;
+    height:auto !important;
+    height:100%; /*hack para o ie6*/
+    margin-bottom: -85px;
+}
+
+.article img
+{
+    display:block;
+    margin:15px auto;
+    width: 80%;
+}
+
+
+@media screen and (max-width:1000px)
+{
+    .article
+    {
+        width:auto;
+        float:none;
+    }
+}
+
+@media screen and (max-width:700px)
+{
+    .header
+    {
+        height:auto;
+        position: static;
+        margin-bottom:20px;
+    }
+
+    .header .logo, .fake-header
+    {
+        display: none;
+    }
+
+    .footer a
+    {
+        display:block;
+        float:none;
+        width: auto;
+        background-position: 50% 0px;
+    }
+
+    .footer a:hover
+    {
+        background-position: 50% -40px;
+    }
+}
+
+@media screen and (max-width:420px)
+{
+    .header .menu
+    {
+        width:auto;
+    }
+
+    .header .menu a
+    {
+        float:none;
+        border:1px solid #ccc;
+    }
+}
+
+@media screen and (max-width:300px)
+{
+    .header .logo
+    {
+        position: static;
+        display: block;
+        width: 100%;
+        border-bottom:1px solid #ccc;
+    }
+}
+
+/******************
+*                 *
+*      FORMs      *
+*                 *
+*******************/
+form.vertical-form label
+{
+    display:block;
+}
+
+form.vertical-form > div
+{
+    margin:10px auto;
+}
+
+form.vertical-form input,
+form.vertical-form textarea
+{
+    width:350px;
+    border:1px solid #ccc;
+    box-shadow:#0d7fff 0px 0px 0px;
+    -moz-transition:0.2s;
+}
+
+form.vertical-form input:focus,
+form.vertical-form textarea:focus
+{
+    box-shadow:#0d7fff 0px 0px 10px;
+}
+
+form.vertical-form .required
+{
+    color:#c22;
+}
+
+form.vertical-form textarea
+{
+    height:200px;
+}
+
+@media screen and (max-width:700px)
+{
+    form.vertical-form input,
+    form.vertical-form textarea
+    {
+        width:100%;
+    }
+}
+
+/*******************
+*                  *
+*      EXTRAs      *
+*                  *
+********************/
+.me
+{
+    background:url("../imgs/eu.png") 50% 50%;
+    width:320px;
+    height:568px;
+    float:left;
+    margin-right:50px;
+    margin-bottom:50px;
+}
+
+@media screen and (max-width:700px)
+{
+    .me
+    {
+        background:url("../imgs/eu_700.png") 50% 20%;
+        width:auto;
+        height:300px;
+        float:none;
+        margin:0px auto 20px;
+    }
+}
+
+a
+{
+    text-decoration:none;
+}
+
+.emph
+{
+    color: #0d7fff;
+}
+
+h1
+{
+    font-size:32px;
+    color:#333;
+    margin-top:0px;
+}
+
+.skill
+{
+    width:49%;
+    float:left;
+    margin:5px 0px;
+}
+
+.skillbar
+{
+    margin:5px 0px;
+    width:70%;
+    background:#c5c5c5;
+    border:1px solid #999;
+    height:5px;
+    border-radius:5px;
+}
+
+.skillbar > div
+{
+    background:#0d7fff;
+    width:0%;
+    height:5px;
+    box-shadow:#0d7fff 0px 0px 10px;
+    border-radius:5px;
+    transition: width 1s;
+    -webkit-transition: width 1s; /* Safari */
+    -moz-transition: width 1s; /* Safari */
+}
+
+@media screen and (max-width:1000px)
+{
+    .skill
+    {
+        width:auto;
+        float:none;
+        margin-left:370px;
+        margin-top:15px;
+    }
+    
+    .skillbar
+    {
+        width:90%;
+    }
+}
+
+@media screen and (max-width:700px)
+{
+    
+    .skill
+    {
+        margin-left:auto;
+    }
+
+    .skillbar
+    {
+        width:100%;
+    }
+}
+
+.github
+{
+    background: url("../imgs/github.png");
+}
+
+
+
+
+/*******************
+*                  *
+*     SPECIALs     *
+*                  *
+********************/
+
+.article .about-body
+{
+    width:630px;
+    float:right;
+}
+
+.article .about-body > div
+{
+    margin-bottom:40px;
+}
+
+.article.contact
+{
+    background: url("../imgs/question.png") no-repeat 50% -100%;
+}
+
+.portfolio
+{
+    padding:0px 5px;
+}
+
+.portfolio h1
+{
+    text-align:center;
+}
+
+.portfolio .case
+{
+    position:relative;
+    float:left;
+    width:300px;
+    height:170px;
+    margin:15px;
+    overflow:hidden;
+    display:block;
+}
+
+.portfolio .case img
+{
+    display:inline;
+    margin: auto;
+    width:auto;
+}
+
+.portfolio .case .overlay
+{
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background:#000;
+    z-index:1;
+    opacity:0;
+}
+
+.portfolio .case span
+{
+    position:absolute;
+    bottom:-37px;
+    left: 0px;
+    right: 0px;
+    display:block;
+    color:#fff;
+    padding:5px 10px;
+    z-index:3;
+}
+
+@media screen and (max-width:1000px)
+{
+    .portfolio
+    {
+        width:660px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .article .about-body
+    {
+        width:auto;
+        float:none;
+    }
+
+
+}
+
+@media screen and (max-width:700px)
+{
+
+    .portfolio
+    {
+        width:auto;
+    }
+
+    .portfolio .case
+    {
+        float:none;
+        width:100%;    
+        height:auto;
+        margin:50px auto;
+    }
+    
+    .portfolio .case img
+    {
+        width:100%;
+    }
+    
+    .portfolio .case .overlay
+    {
+        background:transparent;
+    }
+    
+    .portfolio .case span
+    {
+        position:static;
+        color:#000;
+        font-weight:bold;
+        display:block;
+    }
+    
+
+}
+
+.project-info
+{
+    margin: 20px;
+    font-size:13pt;
+    overflow:hidden;
+}
+
+.project-info div
+{
+    float:left;
+    margin-right:10px;
+}
