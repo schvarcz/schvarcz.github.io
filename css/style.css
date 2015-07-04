@@ -7,7 +7,7 @@ html,body
 
 body
 {
-    background:url("../imgs/background1.png");
+    background:url("../imgs/background1.jpg");
     font-family:sans;
 }
 
@@ -235,7 +235,7 @@ form.vertical-form textarea
 ********************/
 .me
 {
-    background:url("../imgs/eu.png") 50% 50%;
+    background:url("../imgs/eu.jpg") 50% 50%;
     width:320px;
     height:568px;
     float:left;
@@ -247,7 +247,7 @@ form.vertical-form textarea
 {
     .me
     {
-        background:url("../imgs/eu_700.png") 50% 20%;
+        background:url("../imgs/eu_700.jpg") 50% 20%;
         width:auto;
         height:300px;
         float:none;
