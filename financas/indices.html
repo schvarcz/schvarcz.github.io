@@ -1,0 +1,170 @@
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<!-- Plotly chart will be drawn inside this DIV -->
+<div id="ipca"></div>
+  <script>
+  Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/indices/ipca.csv", function(err, rows){
+
+    function unpack(rows, key) {
+    return rows.map(function(row) { return row[key]; });
+  }
+
+
+  var trace1 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'indice-acc-12-meses',
+    x: unpack(rows, 'date'),
+    y: unpack(rows, 'indice-acc-12-meses'),
+    line: {color: '#17BECF'}
+  }
+
+
+  var data = [trace1];
+
+  var layout = {
+    title: 'IPCA',
+    xaxis: {
+      autorange: true,
+      rangeselector: {buttons: [
+          {
+            count: 1,
+            label: '1m',
+            step: 'month',
+            stepmode: 'backward'
+          },
+          {
+            count: 6,
+            label: '6m',
+            step: 'month',
+            stepmode: 'backward'
+          },
+          {step: 'all'}
+        ]},
+      rangeslider: true,
+      type: 'date'
+    },
+    yaxis: {
+      autorange: true,
+      range: [86.8700008333, 138.870004167],
+      type: 'linear'
+    }
+  };
+
+  Plotly.newPlot('ipca', data, layout);
+  })
+  </script>
+
+    <div id="selic"></div>
+      <script>
+      Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/indices/selic.csv", function(err, rows){
+
+        function unpack(rows, key) {
+        return rows.map(function(row) { return row[key]; });
+      }
+
+
+      var trace1 = {
+        type: "scatter",
+        mode: "lines",
+        name: 'taxa-acc-12-meses',
+        x: unpack(rows, 'date'),
+        y: unpack(rows, 'taxa-acc-12-meses'),
+        line: {color: '#17BECF'}
+      }
+
+
+      var data = [trace1];
+
+      var layout = {
+        title: 'SELIC',
+        xaxis: {
+          autorange: true,
+          rangeselector: {buttons: [
+              {
+                count: 1,
+                label: '1m',
+                step: 'month',
+                stepmode: 'backward'
+              },
+              {
+                count: 6,
+                label: '6m',
+                step: 'month',
+                stepmode: 'backward'
+              },
+              {step: 'all'}
+            ]},
+          rangeslider: true,
+          type: 'date'
+        },
+        yaxis: {
+          autorange: true,
+          range: [86.8700008333, 138.870004167],
+          type: 'linear'
+        }
+      };
+
+      Plotly.newPlot('selic', data, layout);
+      })
+      </script>
+
+        <div id="cdi"></div>
+          <script>
+          Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/indices/cdi.csv", function(err, rows){
+
+            function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+          }
+
+
+          var trace1 = {
+            type: "scatter",
+            mode: "lines",
+            name: 'taxa-mensal',
+            x: unpack(rows, 'date'),
+            y: unpack(rows, 'taxa-mensal'),
+            line: {color: '#17BECF'}
+          }
+
+
+          var data = [trace1];
+
+          var layout = {
+            title: 'CDI',
+            xaxis: {
+              autorange: true,
+              rangeselector: {buttons: [
+                  {
+                    count: 1,
+                    label: '1m',
+                    step: 'month',
+                    stepmode: 'backward'
+                  },
+                  {
+                    count: 6,
+                    label: '6m',
+                    step: 'month',
+                    stepmode: 'backward'
+                  },
+                  {step: 'all'}
+                ]},
+              rangeslider: true,
+              type: 'date'
+            },
+            yaxis: {
+              autorange: true,
+              range: [86.8700008333, 138.870004167],
+              type: 'linear'
+            }
+          };
+
+          Plotly.newPlot('cdi', data, layout);
+          })
+          </script>
+
+</body>
+</html>

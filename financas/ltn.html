@@ -1,0 +1,643 @@
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<!-- Plotly chart will be drawn inside this DIV -->
+<div id="ltn010123"></div>
+  <script>
+  Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010123.csv", function(err, rows){
+
+    function unpack(rows, key) {
+    return rows.map(function(row) { return row[key]; });
+  }
+
+
+  var trace1 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'taxa_compra_manha',
+    x: unpack(rows, 'date'),
+    y: unpack(rows, 'taxa_compra_manha'),
+    line: {color: '#17BECF'}
+  }
+
+
+  var data = [trace1];
+
+  var layout = {
+    title: 'LTN 010123',
+    xaxis: {
+      autorange: true,
+      rangeselector: {buttons: [
+          {
+            count: 1,
+            label: '1m',
+            step: 'month',
+            stepmode: 'backward'
+          },
+          {
+            count: 6,
+            label: '6m',
+            step: 'month',
+            stepmode: 'backward'
+          },
+          {step: 'all'}
+        ]},
+      rangeslider: true,
+      type: 'date'
+    },
+    yaxis: {
+      autorange: true,
+    }
+  };
+
+  Plotly.newPlot('ltn010123', data, layout);
+  })
+  </script>
+  <div id="ltn010121"></div>
+    <script>
+    Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010121.csv", function(err, rows){
+
+      function unpack(rows, key) {
+      return rows.map(function(row) { return row[key]; });
+    }
+
+
+    var trace1 = {
+      type: "scatter",
+      mode: "lines",
+      name: 'taxa_compra_manha',
+      x: unpack(rows, 'date'),
+      y: unpack(rows, 'taxa_compra_manha'),
+      line: {color: '#17BECF'}
+    }
+
+
+    var data = [trace1];
+
+    var layout = {
+      title: 'LTN 010121',
+      xaxis: {
+        autorange: true,
+        rangeselector: {buttons: [
+            {
+              count: 1,
+              label: '1m',
+              step: 'month',
+              stepmode: 'backward'
+            },
+            {
+              count: 6,
+              label: '6m',
+              step: 'month',
+              stepmode: 'backward'
+            },
+            {step: 'all'}
+          ]},
+        rangeslider: true,
+        type: 'date'
+      },
+      yaxis: {
+        autorange: true,
+        range: [86.8700008333, 138.870004167],
+        type: 'linear'
+      }
+    };
+
+    Plotly.newPlot('ltn010121', data, layout);
+    })
+    </script>
+    <div id="ltn010110"></div>
+      <script>
+      Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010120.csv", function(err, rows){
+
+        function unpack(rows, key) {
+        return rows.map(function(row) { return row[key]; });
+      }
+
+
+      var trace1 = {
+        type: "scatter",
+        mode: "lines",
+        name: 'taxa_compra_manha',
+        x: unpack(rows, 'date'),
+        y: unpack(rows, 'taxa_compra_manha'),
+        line: {color: '#17BECF'}
+      }
+
+
+      var data = [trace1];
+
+      var layout = {
+        title: 'LTN 010120',
+        xaxis: {
+          autorange: true,
+          rangeselector: {buttons: [
+              {
+                count: 1,
+                label: '1m',
+                step: 'month',
+                stepmode: 'backward'
+              },
+              {
+                count: 6,
+                label: '6m',
+                step: 'month',
+                stepmode: 'backward'
+              },
+              {step: 'all'}
+            ]},
+          rangeslider: true,
+          type: 'date'
+        },
+        yaxis: {
+          autorange: true,
+          range: [86.8700008333, 138.870004167],
+          type: 'linear'
+        }
+      };
+
+      Plotly.newPlot('ltn010120', data, layout);
+      })
+      </script>
+      <div id="ltn010119"></div>
+        <script>
+        Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010119.csv", function(err, rows){
+
+          function unpack(rows, key) {
+          return rows.map(function(row) { return row[key]; });
+        }
+
+
+        var trace1 = {
+          type: "scatter",
+          mode: "lines",
+          name: 'taxa_compra_manha',
+          x: unpack(rows, 'date'),
+          y: unpack(rows, 'taxa_compra_manha'),
+          line: {color: '#17BECF'}
+        }
+
+
+        var data = [trace1];
+
+        var layout = {
+          title: 'LTN 010119',
+          xaxis: {
+            autorange: true,
+            rangeselector: {buttons: [
+                {
+                  count: 1,
+                  label: '1m',
+                  step: 'month',
+                  stepmode: 'backward'
+                },
+                {
+                  count: 6,
+                  label: '6m',
+                  step: 'month',
+                  stepmode: 'backward'
+                },
+                {step: 'all'}
+              ]},
+            rangeslider: true,
+            type: 'date'
+          },
+          yaxis: {
+            autorange: true,
+            range: [86.8700008333, 138.870004167],
+            type: 'linear'
+          }
+        };
+
+        Plotly.newPlot('ltn010119', data, layout);
+        })
+        </script>
+        <div id="ltn010118"></div>
+          <script>
+          Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010118.csv", function(err, rows){
+
+            function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+          }
+
+
+          var trace1 = {
+            type: "scatter",
+            mode: "lines",
+            name: 'taxa_compra_manha',
+            x: unpack(rows, 'date'),
+            y: unpack(rows, 'taxa_compra_manha'),
+            line: {color: '#17BECF'}
+          }
+
+
+          var data = [trace1];
+
+          var layout = {
+            title: 'LTN 010118',
+            xaxis: {
+              autorange: true,
+              rangeselector: {buttons: [
+                  {
+                    count: 1,
+                    label: '1m',
+                    step: 'month',
+                    stepmode: 'backward'
+                  },
+                  {
+                    count: 6,
+                    label: '6m',
+                    step: 'month',
+                    stepmode: 'backward'
+                  },
+                  {step: 'all'}
+                ]},
+              rangeslider: true,
+              type: 'date'
+            },
+            yaxis: {
+              autorange: true,
+              range: [86.8700008333, 138.870004167],
+              type: 'linear'
+            }
+          };
+
+          Plotly.newPlot('ltn010118', data, layout);
+          })
+          </script>
+          <div id="ltn010117"></div>
+            <script>
+            Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010117.csv", function(err, rows){
+
+              function unpack(rows, key) {
+              return rows.map(function(row) { return row[key]; });
+            }
+
+
+            var trace1 = {
+              type: "scatter",
+              mode: "lines",
+              name: 'taxa_compra_manha',
+              x: unpack(rows, 'date'),
+              y: unpack(rows, 'taxa_compra_manha'),
+              line: {color: '#17BECF'}
+            }
+
+
+            var data = [trace1];
+
+            var layout = {
+              title: 'LTN 010117',
+              xaxis: {
+                autorange: true,
+                rangeselector: {buttons: [
+                    {
+                      count: 1,
+                      label: '1m',
+                      step: 'month',
+                      stepmode: 'backward'
+                    },
+                    {
+                      count: 6,
+                      label: '6m',
+                      step: 'month',
+                      stepmode: 'backward'
+                    },
+                    {step: 'all'}
+                  ]},
+                rangeslider: true,
+                type: 'date'
+              },
+              yaxis: {
+                autorange: true,
+                range: [86.8700008333, 138.870004167],
+                type: 'linear'
+              }
+            };
+
+            Plotly.newPlot('ltn010117', data, layout);
+            })
+            </script>
+            <div id="ltn010116"></div>
+              <script>
+              Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010116.csv", function(err, rows){
+
+                function unpack(rows, key) {
+                return rows.map(function(row) { return row[key]; });
+              }
+
+
+              var trace1 = {
+                type: "scatter",
+                mode: "lines",
+                name: 'taxa_compra_manha',
+                x: unpack(rows, 'date'),
+                y: unpack(rows, 'taxa_compra_manha'),
+                line: {color: '#17BECF'}
+              }
+
+
+              var data = [trace1];
+
+              var layout = {
+                title: 'LTN 010116',
+                xaxis: {
+                  autorange: true,
+                  rangeselector: {buttons: [
+                      {
+                        count: 1,
+                        label: '1m',
+                        step: 'month',
+                        stepmode: 'backward'
+                      },
+                      {
+                        count: 6,
+                        label: '6m',
+                        step: 'month',
+                        stepmode: 'backward'
+                      },
+                      {step: 'all'}
+                    ]},
+                  rangeslider: true,
+                  type: 'date'
+                },
+                yaxis: {
+                  autorange: true,
+                  range: [86.8700008333, 138.870004167],
+                  type: 'linear'
+                }
+              };
+
+              Plotly.newPlot('ltn010116', data, layout);
+              })
+              </script>
+              <div id="ltn010115"></div>
+                <script>
+                Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010115.csv", function(err, rows){
+
+                  function unpack(rows, key) {
+                  return rows.map(function(row) { return row[key]; });
+                }
+
+
+                var trace1 = {
+                  type: "scatter",
+                  mode: "lines",
+                  name: 'taxa_compra_manha',
+                  x: unpack(rows, 'date'),
+                  y: unpack(rows, 'taxa_compra_manha'),
+                  line: {color: '#17BECF'}
+                }
+
+
+                var data = [trace1];
+
+                var layout = {
+                  title: 'LTN 010115',
+                  xaxis: {
+                    autorange: true,
+                    rangeselector: {buttons: [
+                        {
+                          count: 1,
+                          label: '1m',
+                          step: 'month',
+                          stepmode: 'backward'
+                        },
+                        {
+                          count: 6,
+                          label: '6m',
+                          step: 'month',
+                          stepmode: 'backward'
+                        },
+                        {step: 'all'}
+                      ]},
+                    rangeslider: true,
+                    type: 'date'
+                  },
+                  yaxis: {
+                    autorange: true,
+                    range: [86.8700008333, 138.870004167],
+                    type: 'linear'
+                  }
+                };
+
+                Plotly.newPlot('ltn010115', data, layout);
+                })
+                </script>
+                <div id="ltn010114"></div>
+                  <script>
+                  Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010114.csv", function(err, rows){
+
+                    function unpack(rows, key) {
+                    return rows.map(function(row) { return row[key]; });
+                  }
+
+
+                  var trace1 = {
+                    type: "scatter",
+                    mode: "lines",
+                    name: 'taxa_compra_manha',
+                    x: unpack(rows, 'date'),
+                    y: unpack(rows, 'taxa_compra_manha'),
+                    line: {color: '#17BECF'}
+                  }
+
+
+                  var data = [trace1];
+
+                  var layout = {
+                    title: 'LTN 010114',
+                    xaxis: {
+                      autorange: true,
+                      rangeselector: {buttons: [
+                          {
+                            count: 1,
+                            label: '1m',
+                            step: 'month',
+                            stepmode: 'backward'
+                          },
+                          {
+                            count: 6,
+                            label: '6m',
+                            step: 'month',
+                            stepmode: 'backward'
+                          },
+                          {step: 'all'}
+                        ]},
+                      rangeslider: true,
+                      type: 'date'
+                    },
+                    yaxis: {
+                      autorange: true,
+                      range: [86.8700008333, 138.870004167],
+                      type: 'linear'
+                    }
+                  };
+
+                  Plotly.newPlot('ltn010114', data, layout);
+                  })
+                  </script>
+                  <div id="ltn010113"></div>
+                    <script>
+                    Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010113.csv", function(err, rows){
+
+                      function unpack(rows, key) {
+                      return rows.map(function(row) { return row[key]; });
+                    }
+
+
+                    var trace1 = {
+                      type: "scatter",
+                      mode: "lines",
+                      name: 'taxa_compra_manha',
+                      x: unpack(rows, 'date'),
+                      y: unpack(rows, 'taxa_compra_manha'),
+                      line: {color: '#17BECF'}
+                    }
+
+
+                    var data = [trace1];
+
+                    var layout = {
+                      title: 'LTN 010113',
+                      xaxis: {
+                        autorange: true,
+                        rangeselector: {buttons: [
+                            {
+                              count: 1,
+                              label: '1m',
+                              step: 'month',
+                              stepmode: 'backward'
+                            },
+                            {
+                              count: 6,
+                              label: '6m',
+                              step: 'month',
+                              stepmode: 'backward'
+                            },
+                            {step: 'all'}
+                          ]},
+                        rangeslider: true,
+                        type: 'date'
+                      },
+                      yaxis: {
+                        autorange: true,
+                        range: [86.8700008333, 138.870004167],
+                        type: 'linear'
+                      }
+                    };
+
+                    Plotly.newPlot('ltn010113', data, layout);
+                    })
+                    </script>
+                    <div id="ltn010112"></div>
+                      <script>
+                      Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010112.csv", function(err, rows){
+
+                        function unpack(rows, key) {
+                        return rows.map(function(row) { return row[key]; });
+                      }
+
+
+                      var trace1 = {
+                        type: "scatter",
+                        mode: "lines",
+                        name: 'taxa_compra_manha',
+                        x: unpack(rows, 'date'),
+                        y: unpack(rows, 'taxa_compra_manha'),
+                        line: {color: '#17BECF'}
+                      }
+
+
+                      var data = [trace1];
+
+                      var layout = {
+                        title: 'LTN 010112',
+                        xaxis: {
+                          autorange: true,
+                          rangeselector: {buttons: [
+                              {
+                                count: 1,
+                                label: '1m',
+                                step: 'month',
+                                stepmode: 'backward'
+                              },
+                              {
+                                count: 6,
+                                label: '6m',
+                                step: 'month',
+                                stepmode: 'backward'
+                              },
+                              {step: 'all'}
+                            ]},
+                          rangeslider: true,
+                          type: 'date'
+                        },
+                        yaxis: {
+                          autorange: true,
+                          range: [86.8700008333, 138.870004167],
+                          type: 'linear'
+                        }
+                      };
+
+                      Plotly.newPlot('ltn010112', data, layout);
+                      })
+                      </script>
+                      <div id="ltn010111"></div>
+                        <script>
+                        Plotly.d3.csv("https://raw.githubusercontent.com/schvarcz/indices-titulos-brasil/master/LTN/ltn-010111.csv", function(err, rows){
+
+                          function unpack(rows, key) {
+                          return rows.map(function(row) { return row[key]; });
+                        }
+
+
+                        var trace1 = {
+                          type: "scatter",
+                          mode: "lines",
+                          name: 'taxa_compra_manha',
+                          x: unpack(rows, 'date'),
+                          y: unpack(rows, 'taxa_compra_manha'),
+                          line: {color: '#17BECF'}
+                        }
+
+
+                        var data = [trace1];
+
+                        var layout = {
+                          title: 'LTN 010111',
+                          xaxis: {
+                            autorange: true,
+                            rangeselector: {buttons: [
+                                {
+                                  count: 1,
+                                  label: '1m',
+                                  step: 'month',
+                                  stepmode: 'backward'
+                                },
+                                {
+                                  count: 6,
+                                  label: '6m',
+                                  step: 'month',
+                                  stepmode: 'backward'
+                                },
+                                {step: 'all'}
+                              ]},
+                            rangeslider: true,
+                            type: 'date'
+                          },
+                          yaxis: {
+                            autorange: true,
+                            range: [86.8700008333, 138.870004167],
+                            type: 'linear'
+                          }
+                        };
+
+                        Plotly.newPlot('ltn010111', data, layout);
+                        })
+                        </script>
+
+</body>
+</html>
