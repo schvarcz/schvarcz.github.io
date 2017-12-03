@@ -70,14 +70,22 @@
       var trace1 = {
         type: "scatter",
         mode: "lines",
-        name: 'taxa-acc-12-meses',
+        name: 'Taxa Acc 12 meses',
         x: unpack(rows, 'date'),
         y: unpack(rows, 'taxa-acc-12-meses'),
         line: {color: '#17BECF'}
       }
+      var trace2 = {
+        type: "scatter",
+        mode: "lines",
+        name: 'Taxa Anual',
+        x: unpack(rows, 'date'),
+        y: unpack(rows, 'taxa-anual-*'),
+        line: {color: '#666666'}
+      }
 
 
-      var data = [trace1];
+      var data = [trace1,trace2];
 
       var layout = {
         title: 'SELIC',
