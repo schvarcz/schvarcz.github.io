@@ -1,6 +1,385 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="refresh" content="0; url=https://github.com/schvarcz/" />
+    <meta charset="utf-8">
+    <title>My first Chartist Tests</title>
+    <link rel="stylesheet" href="static/node_modules/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 </head>
-<body></body>
+
+<body>
+    <div class="container">
+        <div class="row  justify-content-md-center">
+            <div class="col col-md-8">
+                <div class="row mt-5">
+                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                        <h5>Body Composition</h5>
+                        <div class="row">
+                            <div class="col">
+                                <input type="radio" class="btn-check" name="mode-body-composition"
+                                    id="body-composition-daily" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="body-composition-daily">Daily</label>
+                                <input type="radio" class="btn-check" name="mode-body-composition"
+                                    id="body-composition-weekly" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="body-composition-weekly">Weekly</label>
+                                <input type="radio" class="btn-check" name="mode-body-composition"
+                                    id="body-composition-monthly" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="body-composition-monthly">Monthly</label>
+                            </div>
+                            <div class="col text-end">
+                                <input type="radio" class="btn-check" name="scale-body-composition"
+                                    id="body-composition-kg" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="body-composition-kg">Kg</label>
+                                <input type="radio" class="btn-check" name="scale-body-composition"
+                                    id="body-composition-%" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm" for="body-composition-%">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body-composition row"></div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                        <h5>Calories Intake per Macronutrient</h5>
+                        <div class="row">
+                            <div class="col">
+                                <input type="radio" class="btn-check" name="mode-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-daily" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="calories-intake-per-macro-daily">Daily</label>
+                                <input type="radio" class="btn-check" name="mode-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-weekly" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="calories-intake-per-macro-weekly">Weekly</label>
+                                <input type="radio" class="btn-check" name="mode-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-monthly" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="calories-intake-per-macro-monthly">Monthly</label>
+                            </div>
+                            <div class="col text-end">
+                                <input type="radio" class="btn-check" name="scale-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-cal" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="calories-intake-per-macro-cal">Cal</label>
+                                <input type="radio" class="btn-check" name="scale-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-%" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm" for="calories-intake-per-macro-%">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calories-intake-per-macro row"></div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                        <h5>Calories Intake vs Calories Burned</h5>
+                        <div class="row">
+                            <div class="col">
+                                <input type="radio" class="btn-check" name="mode-energy-rate" id="energy-rate-daily"
+                                    autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm" for="energy-rate-daily">Daily</label>
+                                <input type="radio" class="btn-check" name="mode-energy-rate" id="energy-rate-weekly"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="energy-rate-weekly">Weekly</label>
+                                <input type="radio" class="btn-check" name="mode-energy-rate" id="energy-rate-monthly"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="energy-rate-monthly">Monthly</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="energy-rate row"></div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                        <h5>Steps Taken</h5>
+                        <div class="row">
+                            <div class="col">
+                                <input type="radio" class="btn-check" name="mode-steps" id="steps-daily"
+                                    autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm" for="steps-daily">Daily</label>
+                                <input type="radio" class="btn-check" name="mode-steps" id="steps-weekly"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="steps-weekly">Weekly</label>
+                                <input type="radio" class="btn-check" name="mode-steps" id="steps-monthly"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="steps-monthly">Monthly</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps row"></div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                        <h5>Floors Climbed</h5>
+                        <div class="row">
+                            <div class="col">
+                                <input type="radio" class="btn-check" name="mode-flights-climbed"
+                                    id="flights-climbed-daily" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger btn-sm" for="flights-climbed-daily">Daily</label>
+                                <input type="radio" class="btn-check" name="mode-flights-climbed"
+                                    id="flights-climbed-weekly" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm" for="flights-climbed-weekly">Weekly</label>
+                                <input type="radio" class="btn-check" name="mode-flights-climbed"
+                                    id="flights-climbed-monthly" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="flights-climbed-monthly">Monthly</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flights-climbed row"></div>
+                </div>
+
+                <div class="row mt-5">
+                    <h5>Body Fat vs Lean Mass</h5>
+                    <div class="bodyfat-leanmass row"></div>
+                </div>
+
+                <div class="row mt-5">
+                    <h5>Body Fat vs Body Mass</h5>
+                    <div class="bodyfat-bodymass row"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site content goes here !-->
+    <script src="static/node_modules/chartist/dist/chartist.min.js"></script>
+    <script src="static/node_modules/d3/dist/d3.min.js"></script>
+    <script src="static/node_modules/d3-time/dist/d3-time.min.js"></script>
+    <script src="static/node_modules/htl/dist/htl.min.js"></script>
+    <script src="static/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://api.observablehq.com/@d3/color-legend.js?v=3"></script> -->
+
+    <script src="static/js/drawing-funcs.js"></script>
+    <script>
+        var data_daily, data_monthly, data_weekly;
+        $(document).ready(function () {
+
+            $.ajax({ url: "static/data/data.json", dataType: "json", async: false }).done(data => data_daily = data);
+            $.ajax({ url: "static/data/data_month.json", dataType: "json", async: false }).done(data => data_monthly = data);
+            $.ajax({ url: "static/data/data_week.json", dataType: "json", async: false }).done(data => data_weekly = data);
+
+            data = data_daily;
+            function init() {
+                function get_date_formatter(mode) {
+                    switch (mode) {
+                        case "daily":
+                            return d => d.Date;
+                            break;
+                        case "weekly":
+                            return d => d3.timeFormat("%U")(d.Date);
+                            break;
+                        case "monthly":
+                            return d => d3.timeFormat("%B")(d.Date);
+                            break;
+                    }
+                }
+
+                function get_data(mode) {
+                    switch (mode) {
+                        case "daily":
+                            return data_daily;
+                            break;
+                        case "weekly":
+                            return data_weekly;
+                            break;
+                        case "monthly":
+                            return data_monthly;
+                            break;
+                    }
+                }
+
+                function get_scale_options(scale) {
+                    switch (scale) {
+                        case "%":
+                            return { offset: d3.stackOffsetExpand, yFormat: "%" };
+                        default:
+                            return { offset: d3.stackOffsetDiverging };
+                    }
+                }
+
+                function update_body_composition() {
+                    mode = $("input[name=mode-body-composition]:checked").attr("id").split("-").at(-1);
+                    scale = $("input[name=scale-body-composition]:checked").attr("id").split("-").at(-1);
+
+                    data = get_data(mode);
+                    scale_options = get_scale_options(scale);
+                    date_formatter = get_date_formatter(mode);
+
+                    var columns = ["FDBodyBoneMassKg", "FDBodyRemaingMassKg", "FDBodySkeletalMuscleKg", "FDBodyVisceralFatKg", "FDBodySubcutaneousFatKg"];
+                    options = Object.assign({
+                        x: date_formatter,
+                        width: $(".body-composition").width(),
+                        zDomain: columns
+                    }, scale_options);
+
+                    if (mode == "daily")
+                        [legend, body_composition] = StackedAreaChart(data, options);
+                    else
+                        [legend, body_composition]  = StackedBarChart(data, options);
+
+                    var n = d3.select(".body-composition").node();
+                    n.innerHTML = "";
+                    n.appendChild(body_composition);
+                    n.appendChild(legend);
+
+                }
+
+                function update_calories_intake_per_macro() {
+                    mode = $("input[name=mode-calories-intake-per-macro]:checked").attr("id").split("-").at(-1);
+                    scale = $("input[name=scale-calories-intake-per-macro]:checked").attr("id").split("-").at(-1);
+
+                    data = get_data(mode);
+                    scale_options = get_scale_options(scale);
+                    date_formatter = get_date_formatter(mode);
+
+                    options = Object.assign({
+                        x: date_formatter,
+                        width: $(".calories-intake-per-macro").width(),
+                        zDomain: ["HKDietaryProteinCal", "HKDietaryFatTotalCal", "HKDietaryCarbohydratesCal"]
+                    }, scale_options);
+
+                    if (mode == "daily")
+                        [legend, calories_intake_per_macro] = StackedAreaChart(data, options);
+                    else
+                        [legend, calories_intake_per_macro] = StackedBarChart(data, options);
+
+                    var n = d3.select(".calories-intake-per-macro").node();
+                    n.innerHTML = "";
+                    n.appendChild(calories_intake_per_macro);
+                    n.appendChild(legend);
+                }
+
+                function update_energy_rate() {
+                    mode = $("input[name=mode-energy-rate]:checked").attr("id").split("-").at(-1);
+
+                    data = get_data(mode);
+
+                    energy_rate = DifferenceChart(data, {
+                        x: d => d.Date,
+                        y1: d => d["HKTotalEnergyBurned"],
+                        y2: d => d["HKDietaryEnergyConsumed"],
+                        width: $(".energy-rate").width()
+                    });
+
+                    var n = d3.select(".energy-rate").node();
+                    n.innerHTML = "";
+                    n.appendChild(energy_rate);
+                }
+
+                function update_steps() {
+                    mode = $("input[name=mode-steps]:checked").attr("id").split("-").at(-1);
+
+                    data = get_data(mode);
+
+                    steps_count = AreaChart(data, {
+                        x: d => d.Date,
+                        y: d => d.HKStepCount,
+                        yLabel: "# Steps",
+                        width: $(".steps").width(),
+                        height: 500,
+                        color: "steelblue"
+                    });
+
+                    var n = d3.select(".steps").node();
+                    n.innerHTML = "";
+                    n.appendChild(steps_count);
+                }
+
+                function update_flights_climbed() {
+                    mode = $("input[name=mode-flights-climbed]:checked").attr("id").split("-").at(-1);
+
+                    data = get_data(mode);
+
+                    flights_climbed_count = AreaChart(data, {
+                        x: d => d.Date,
+                        y: d => d.HKFlightsClimbed,
+                        yLabel: "# Floors Climbed",
+                        width: $(".flights-climbed").width(),
+                        height: 500,
+                        color: "steelblue"
+                    });
+                    var n = d3.select(".flights-climbed").node();
+                    n.innerHTML = "";
+                    n.appendChild(flights_climbed_count);
+                }
+
+                function update_bodyfat_leanmass() {
+                    fatkg_leankg = Scatterplot(data, {
+                        x: d => d.FDBodyLeanMassKg,
+                        y: d => d.FDBodyFatKg,
+                        width: $(".bodyfat-leanmass").width(),
+                        // title: d => d.name,
+                        xLabel: "Lean Mass",
+                        yLabel: "Body Fat",
+                        stroke: "steelblue",
+                        fill: "blue"
+                    });
+                    var n = d3.select(".bodyfat-leanmass").node();
+                    n.innerHTML = "";
+                    n.appendChild(fatkg_leankg);
+                }
+
+                function update_bodyfat_bodymass() {
+                    fatperc_bodymass = Scatterplot(data, {
+                        x: d => d.FDBodyMassKg,
+                        y: d => d.FDBodyFatPercentage,
+                        width: $(".bodyfat-bodymass").width(),
+                        yFormat: "%",
+                        // title: d => d.name,
+                        xLabel: "Body Mass (kg)",
+                        yLabel: "Body Fat (%)",
+                        stroke: "steelblue",
+                        fill: "blue"
+                    });
+                    var n = d3.select(".bodyfat-bodymass").node();
+                    n.innerHTML = "";
+                    n.appendChild(fatperc_bodymass);
+                }
+
+
+                $(".btn-check").click(function () {
+                    obj_name = $(this).attr("name");
+                    if (obj_name.startsWith("mode-"))
+                        plot_name = obj_name.substr("mode-".length)
+                    else if (obj_name.startsWith("scale-"))
+                        plot_name = obj_name.substr("scale-".length)
+
+                    switch (plot_name) {
+                        case "body-composition":
+                            update_body_composition();
+                            break;
+                        case "energy-rate":
+                            update_energy_rate();
+                            break;
+                        case "calories-intake-per-macro":
+                            update_calories_intake_per_macro();
+                            break;
+                        case "steps":
+                            update_steps();
+                            break;
+                        case "flights-climbed":
+                            update_flights_climbed();
+                            break;
+                    }
+                });
+                $(".btn-check:checked").click();
+
+                update_bodyfat_leanmass();
+                update_bodyfat_bodymass();
+            };
+            init();
+
+        });
+    </script>
+</body>
+
 </html>
