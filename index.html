@@ -3,7 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My first Chartist Tests</title>
+    <title>Body Data</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50863235-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-50863235-1');
+    </script>
     <link rel="stylesheet" href="static/node_modules/chartist/dist/chartist.min.css">
     <link rel="stylesheet" href="static/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -224,7 +233,7 @@
                     if (mode == "daily")
                         [legend, body_composition] = StackedAreaChart(data, options);
                     else
-                        [legend, body_composition]  = StackedBarChart(data, options);
+                        [legend, body_composition] = StackedBarChart(data, options);
 
                     var n = d3.select(".body-composition").node();
                     n.innerHTML = "";
