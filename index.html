@@ -24,7 +24,7 @@
         <div class="row  justify-content-md-center">
             <div class="col col-md-8">
                 <div class="row mt-5">
-                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                    <div class="container control mb-4" style="padding: 0px 50px 0px 40px;">
                         <h5>Body Composition</h5>
                         <div class="row">
                             <div class="col">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                    <div class="container control mb-4" style="padding: 0px 50px 0px 40px;">
                         <h5>Calories Intake per Macronutrient</h5>
                         <div class="row">
                             <div class="col">
@@ -71,11 +71,21 @@
                                 <label class="btn btn-outline-danger btn-sm"
                                     for="calories-intake-per-macro-monthly">Monthly</label>
                             </div>
-                            <div class="col text-end">
-                                <input type="radio" class="btn-check" name="scale-calories-intake-per-macro"
+                            <div class="col text-center">
+                                <input type="radio" class="btn-check" name="unit-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-grams" autocomplete="off" checked >
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="calories-intake-per-macro-grams">Grams</label>
+                                <input type="radio" class="btn-check" name="unit-calories-intake-per-macro"
                                     id="calories-intake-per-macro-cal" autocomplete="off">
                                 <label class="btn btn-outline-danger btn-sm"
                                     for="calories-intake-per-macro-cal">Cal</label>
+                            </div>
+                            <div class="col text-end">
+                                <input type="radio" class="btn-check" name="scale-calories-intake-per-macro"
+                                    id="calories-intake-per-macro-unit" autocomplete="off">
+                                <label class="btn btn-outline-danger btn-sm"
+                                    for="calories-intake-per-macro-unit">Unit</label>
                                 <input type="radio" class="btn-check" name="scale-calories-intake-per-macro"
                                     id="calories-intake-per-macro-%" autocomplete="off" checked>
                                 <label class="btn btn-outline-danger btn-sm" for="calories-intake-per-macro-%">%</label>
@@ -86,7 +96,7 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                    <div class="container control mb-4" style="padding: 0px 50px 0px 40px;">
                         <h5>Calories Intake vs Calories Burned</h5>
                         <div class="row">
                             <div class="col">
@@ -106,7 +116,7 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                    <div class="container control mb-4" style="padding: 0px 50px 0px 40px;">
                         <h5>Steps Taken</h5>
                         <div class="row">
                             <div class="col">
@@ -126,7 +136,7 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="container control" style="padding: 0px 50px 0px 40px;">
+                    <div class="container control mb-4" style="padding: 0px 50px 0px 40px;">
                         <h5>Floors Climbed</h5>
                         <div class="row">
                             <div class="col">
@@ -227,7 +237,8 @@
                     options = Object.assign({
                         x: date_formatter,
                         width: $(".body-composition").width(),
-                        zDomain: columns
+                        zDomain: columns,
+                        yLabel: "Weight",
                     }, scale_options);
 
                     if (mode == "daily")
@@ -245,15 +256,29 @@
                 function update_calories_intake_per_macro() {
                     mode = $("input[name=mode-calories-intake-per-macro]:checked").attr("id").split("-").at(-1);
                     scale = $("input[name=scale-calories-intake-per-macro]:checked").attr("id").split("-").at(-1);
+                    unit = $("input[name=unit-calories-intake-per-macro]:checked").attr("id").split("-").at(-1);
+
+                    console.log(unit);
 
                     data = get_data(mode);
                     scale_options = get_scale_options(scale);
                     date_formatter = get_date_formatter(mode);
 
+                    switch (unit) {
+                        case "grams":
+                            yLabel = "Grams";
+                            zDomain = ["HKDietaryProtein", "HKDietaryFatTotal", "HKDietaryCarbohydrates"];
+                            break;
+                        default:
+                            yLabel = "Calories";
+                            zDomain = ["HKDietaryProteinCal", "HKDietaryFatTotalCal", "HKDietaryCarbohydratesCal"];
+                    }
+
                     options = Object.assign({
                         x: date_formatter,
+                        yLabel: yLabel,
                         width: $(".calories-intake-per-macro").width(),
-                        zDomain: ["HKDietaryProteinCal", "HKDietaryFatTotalCal", "HKDietaryCarbohydratesCal"]
+                        zDomain: zDomain
                     }, scale_options);
 
                     if (mode == "daily")
@@ -276,6 +301,7 @@
                         x: d => d.Date,
                         y1: d => d["HKTotalEnergyBurned"],
                         y2: d => d["HKDietaryEnergyConsumed"],
+                        yLabel: "Calories",
                         width: $(".energy-rate").width()
                     });
 
@@ -361,6 +387,8 @@
                         plot_name = obj_name.substr("mode-".length)
                     else if (obj_name.startsWith("scale-"))
                         plot_name = obj_name.substr("scale-".length)
+                    else if (obj_name.startsWith("unit-"))
+                        plot_name = obj_name.substr("unit-".length)
 
                     switch (plot_name) {
                         case "body-composition":

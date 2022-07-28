@@ -98,6 +98,13 @@ function StackedAreaChart(data, {
             .text(yLabel));
 
     svg.append("g")
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        .call(xAxis)
+        .call(g => g.selectAll(".tick line").clone()
+            .attr("y2", marginTop + marginBottom - height)
+            .attr("stroke-opacity", 0.1));
+
+    svg.append("g")
         .selectAll("path")
         .data(series)
         .join("path")
@@ -105,10 +112,6 @@ function StackedAreaChart(data, {
         .attr("d", area)
         .append("title")
         .text(s => s.key);
-
-    svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(xAxis);
 
     const tooltip = svg.append("g")
         .style("pointer-events", "none");
@@ -357,13 +360,16 @@ function AreaChart(data, {
             .attr("text-anchor", "start")
             .text(yLabel));
 
+    svg.append("g")
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        .call(xAxis)
+        .call(g => g.selectAll(".tick line").clone()
+            .attr("y2", marginTop + marginBottom - height)
+            .attr("stroke-opacity", 0.1));
+
     svg.append("path")
         .attr("fill", color)
         .attr("d", area(I));
-
-    svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(xAxis);
 
 
     const tooltip = svg.append("g")
@@ -494,6 +500,14 @@ function DifferenceChart(data, {
             .attr("text-anchor", "start")
             .text(yLabel));
 
+    svg.append("g")
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        .call(xAxis)
+        .call(g => g.select(".domain").remove())
+        .call(g => g.selectAll(".tick line").clone()
+            .attr("y2", marginTop + marginBottom - height)
+            .attr("stroke-opacity", 0.1));
+
     svg.append("clipPath")
         .attr("id", `${uid}-above`)
         .append("path")
@@ -513,11 +527,6 @@ function DifferenceChart(data, {
         .attr("clip-path", `url(${new URL(`#${uid}-below`, location)})`)
         .attr("fill", colors[0])
         .attr("d", area(0, i => yScale(Y2[i])));
-
-    svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(xAxis)
-        .call(g => g.select(".domain").remove());
 
     svg.append("path")
         .attr("fill", "none")
@@ -812,6 +821,13 @@ function StackedBarChart(data, {
             .attr("text-anchor", "start")
             .text(yLabel));
 
+    svg.append("g")
+        .attr("transform", `translate(0,${yScale(0)})`)
+        .call(xAxis)
+        .call(g => g.selectAll(".tick line").clone()
+            .attr("y2", marginTop + marginBottom - height)
+            .attr("stroke-opacity", 0.1));
+
     const bar = svg.append("g")
         .selectAll("g")
         .data(series)
@@ -824,10 +840,6 @@ function StackedBarChart(data, {
         .attr("y", ([y1, y2]) => Math.min(yScale(y1), yScale(y2)))
         .attr("height", ([y1, y2]) => Math.abs(yScale(y1) - yScale(y2)))
         .attr("width", xScale.bandwidth());
-
-    svg.append("g")
-        .attr("transform", `translate(0,${yScale(0)})`)
-        .call(xAxis);
 
     const tooltip = svg.append("g")
         .style("pointer-events", "none");
